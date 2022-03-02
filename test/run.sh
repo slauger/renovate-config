@@ -10,10 +10,13 @@ if [ -z "${RENOVATE_ARGS}" ]; then
   exit 1
 fi
 
-echo "Running on platform ${PLATFORM:-github}"
+PLATFORM="${RENOVATE_PLATFORM:-github}"
+LOG_LEVEL="${RENOVATE_LOG_LEVEL:-debug}"
+
+echo "Running on platform ${PLATFORM}"
 
 docker run --rm -it \
-  -e LOG_LEVEL="${RENOVATE_LOG_LEVEL:-debug}" \
+  -e LOG_LEVEL="${LOG_LEVEL}" \
   -e RENOVATE_TOKEN="${RENOVATE_TOKEN}" \
-  -v $(pwd)/${PLATFORM:-github}.js:/usr/src/app/config.js \
+  -v "$(pwd)/${PLATFORM}.js":"/usr/src/app/config.js" \
   docker.io/renovate/renovate ${RENOVATE_ARGS}
