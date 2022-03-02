@@ -6,7 +6,7 @@
     ":semanticCommitTypeAll(fix)",
     ":prHourlyLimitNone",
     ":prConcurrentLimitNone",
-    "local>slauger/renovate-config:regex-comments"
+    "github>slauger/renovate-config:regex-comments"
   ],
   "labels": ["renovate"],
   "separateMinorPatch": true,
