@@ -10,6 +10,7 @@
   ],
   "labels": ["renovate"],
   "commitMessageTopic": "{{datasource}} dependency {{depName}}",
+  "branchTopic": "{{{datasource}}}-{{{depNameSanitized}}}-{{{newMajor}}}{{#if separateMinorPatch}}{{#if isPatch}}.{{{newMinor}}}{{/if}}{{/if}}.x{{#if isLockfileUpdate}}-lockfile{{/if}}",
   "separateMinorPatch": true,
   "git-submodules": {
     "enabled": true
