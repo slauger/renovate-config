@@ -9,6 +9,7 @@
     "github>slauger/renovate-config:regex-comments"
   ],
   "labels": ["renovate"],
+  "commitMessageTopic": "{{datasource}} dependency {{depName}}",
   "separateMinorPatch": true,
   "git-submodules": {
     "enabled": true
