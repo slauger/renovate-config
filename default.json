@@ -2,31 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base",
-    ":semanticCommits",
-    ":semanticCommitTypeAll(fix)",
-    ":prHourlyLimitNone",
-    ":prConcurrentLimitNone",
-    ":disableDependencyDashboard",
+    "github>slauger/renovate-config:base",
     "github>slauger/renovate-config:regex-comments"
-  ],
-  "labels": ["renovate"],
-  "commitMessageTopic": "{{datasource}} dependency {{depName}}",
-  "branchTopic": "{{{datasource}}}-{{{depNameSanitized}}}-{{{newMajor}}}{{#if separateMinorPatch}}{{#if isPatch}}.{{{newMinor}}}{{/if}}{{/if}}.x{{#if isLockfileUpdate}}-lockfile{{/if}}",
-  "separateMinorPatch": true,
-  "git-submodules": {
-    "enabled": true
-  },
-  "bundler": {
-    "enabled": true
-  },
-  "vulnerabilityAlerts": {
-    "enabled": true
-  },
-  "dockerfile": {
-    "fileMatch": [
-      "(^|/)Dockerfile$",
-      "(^|/)Dockerfile\\.[^/]*$",
-      "(^|/)\\.*Dockerfile$"
-    ]
-  }
+  ]
 }
