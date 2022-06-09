@@ -60,7 +60,7 @@
         "(^|/)values-(.*).yaml$"
       ],
       "matchStrings": [
-        "[ \\t]+#[ \\t]+renovate:[ \\t]+datasource=(?<datasource>.*?)[ \\t]+depName=(?<depName>.*?)([ \\t]+versioning=(?<versioning>.*?))?([ \\t]+extractVersion=(?<extractVersion>.*?))?\\s+version:[ \\t]+\"?(?<currentValue>[^\"\\s]*)\"?\\s"
+        "[ \\t]+#[ \\t]+renovate:[ \\t]+datasource=(?<datasource>.*?)[ \\t]+depName=(?<depName>.*?)([ \\t]+versioning=(?<versioning>.*?))?([ \\t]+extractVersion=(?<extractVersion>.*?))?\\s+(.*):[ \\t]+\"?(?<currentValue>[^\"\\s]*)\"?\\s"
       ]
     }
   ]
