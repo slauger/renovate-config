@@ -53,6 +53,15 @@
       "matchStrings": [
         "[ \\t]+#[ \\t]+renovate:[ \\t]+datasource=(?<datasource>.*?)[ \\t]+depName=(?<depName>.*?)([ \\t]+versioning=(?<versioning>.*?))?([ \\t]+extractVersion=(?<extractVersion>.*?))?\\s+:tag[ \\t]+=>[ \\t]+\"(?<currentValue>[^\"]*)\"\\s"
       ]
+    },
+    {
+      "fileMatch": [
+        "(^|/)values.yaml$",
+        "(^|/)values-(.*).yaml$"
+      ],
+      "matchStrings": [
+        "[ \\t]+#[ \\t]+renovate:[ \\t]+datasource=(?<datasource>.*?)[ \\t]+depName=(?<depName>.*?)([ \\t]+versioning=(?<versioning>.*?))?([ \\t]+extractVersion=(?<extractVersion>.*?))?\\s+version:[ \\t]+\"?(?<currentValue>[^\"\\s]*)\"?\\s"
+      ]
     }
   ]
 }
