@@ -1,0 +1,67 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "(^|/)Dockerfile",
+        "(^|/)Dockerfile\\..*"
+      ],
+      "extractVersionTemplate": "^v?(?<version>.*)$",
+      "matchStrings": [
+        "#[ \\t]+renovate:[ \\t]+datasource=(?<datasource>.*?)[ \\t]+depName=(?<depName>.*?)(?:[ \\t]+versioning=(?<versioning>.*?))?(?:[ \\t]+extractVersion=(?<extractVersion>.*?))?\\s+(?:ENV|ARG)[ \\t]+.*?_VERSION(?:[ \\t]+|=)(?<currentValue>.*)\\s"
+      ]
+    },
+    {
+      "fileMatch": [
+        "^\\.gitlab-ci[^/]*\\.yml$",
+        "^\\.gitlab-ci/.*\\.yml$",
+        "^\\.gitlab-ci-template[^/]*\\.yml$"
+      ],
+      "matchStrings": [
+        "#[ \\t]+renovate:[ \\t]+datasource=(?<datasource>.*?)[ \\t]+depName=(?<depName>.*?)([ \\t]+versioning=(?<versioning>.*?))?([ \\t]+extractVersion=(?<extractVersion>.*?))?\\s+.*?_VERSION:[ \\t]+(?<currentValue>.*)\\s"
+      ]
+    },
+    {
+      "fileMatch": [
+        "(^|/)Makefile$"
+      ],
+      "matchStrings": [
+        "#[ \\t]+renovate:[ \\t]+datasource=(?<datasource>.*?)[ \\t]+depName=(?<depName>.*?)([ \\t]+versioning=(?<versioning>.*?))?([ \\t]+extractVersion=(?<extractVersion>.*?))?\\s.*?_VERSION=(?<currentValue>.*)\\s"
+      ]
+    },
+    {
+      "fileMatch": [
+        "(^|/)helmfile\\.yaml$",
+        "(^|/)helmfile\\.d/.*\\.yaml$"
+      ],
+      "matchStrings": [
+        "[ \\t]+#[ \\t]+renovate:[ \\t]+datasource=(?<datasource>.*?)[ \\t]+depName=(?<depName>.*?)([ \\t]+versioning=(?<versioning>.*?))?([ \\t]+extractVersion=(?<extractVersion>.*?))?\\s+version:[ \\t]+\"(?<currentValue>[^\"]*)\"\\s"
+      ]
+    },
+    {
+      "fileMatch": [
+        "(^|/)terragrunt\\.hcl$"
+      ],
+      "matchStrings": [
+        "[ \\t]+#[ \\t]+renovate:[ \\t]+datasource=(?<datasource>.*?)[ \\t]+depName=(?<depName>.*?)([ \\t]+versioning=(?<versioning>.*?))?([ \\t]+extractVersion=(?<extractVersion>.*?))?\\s+version[ \\t]+=[ \\t]+\"(?<currentValue>[^\"]*)\"\\s"
+      ]
+    },
+    {
+      "fileMatch": [
+        "(^|/)Puppetfile$"
+      ],
+      "matchStrings": [
+        "[ \\t]+#[ \\t]+renovate:[ \\t]+datasource=(?<datasource>.*?)[ \\t]+depName=(?<depName>.*?)([ \\t]+versioning=(?<versioning>.*?))?([ \\t]+extractVersion=(?<extractVersion>.*?))?\\s+:tag[ \\t]+=>[ \\t]+\"(?<currentValue>[^\"]*)\"\\s"
+      ]
+    },
+    {
+      "fileMatch": [
+        "(^|/)values.yaml$",
+        "(^|/)values-(.*).yaml$"
+      ],
+      "matchStrings": [
+        "[ \\t]+#[ \\t]+renovate:[ \\t]+datasource=(?<datasource>.*?)[ \\t]+depName=(?<depName>.*?)([ \\t]+versioning=(?<versioning>.*?))?([ \\t]+extractVersion=(?<extractVersion>.*?))?\\s+(.*):[ \\t]+\"?(?<currentValue>[^\"\\s]*)\"?\\s"
+      ]
+    }
+  ]
+}
